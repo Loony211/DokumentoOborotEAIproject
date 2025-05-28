@@ -9,15 +9,9 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Регистрация</h1>
-            <nav>
-                <ul>
-                    <li><a href="{% url 'glavnaya' %}">Главная</a></li>
-                    <li><a href="{% url 'signupuser' %}">Регистрация</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1 class="header-title">Люберецкий Техникум</h1>
+        <img src="{% static 'min.jpg' %}" alt="Люберецкий Техникум" class="header-image">
+        <a href="{% url 'glavnaya' %}" class="registration-button">Главная</a>
     </header>
 
     <main>

@@ -16,8 +16,12 @@ Including another URLconf
 """
 from django.urls import path, include
 from django.contrib import admin
+from spravka import views as spravka_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('spravka.urls')),
+    path('', spravka_views.glavnaya, name='glavnaya'),
+    path('static/document_processing/template.xlsx', include('document_processing.urls')),  # URL для нового приложения
 ]
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Заполнение шаблона Word</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <h1 class="header-title">Люберецкий Техникум</h1>
+        <img src="{% static 'min.jpg' %}" alt="Люберецкий Техникум" class="header-image">
+        <a href="{% url 'glavnaya' %}" class="registration-button">Главная</a>
+    </header>
+    <h1>Заполнение шаблона Word</h1>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="excel_file">
+        <button type="submit">Загрузить и обработать</button>
+    </form>
+
+    <p><a href="{% static 'document_processing/template.xlsx' %}" download>Скачать Excel-шаблон</a></p>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Успех!</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <h1 class="header-title">успех!</h1>
+        <img src="{% static 'min2.jpg' %}" alt="Люберецкий Техникум" class="header-image">
+        <a href="{% url 'glavnaya' %}" class="registration-button">Главная</a>
+    </header>
+    <a href="{% url 'download_file' download_link %}" class="registration-buttonnn">Скачать Word-файл</a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Заполнение шаблона Word</title>
+</head>
+<body>
+    <h1>Заполнение шаблона Word</h1>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if success %}
+        <p style="color: green;">Файл успешно обработан.  <a href="{{ url_for('download_file', filename=download_link) }}">Скачать Word-файл</a></p>
+    {% endif %}
+
+    <a href="{{ url_for('download_template') }}">Скачать Excel-шаблон</a>
+
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Загрузить и обработать">
+    </form>
+</body>
+</html>
